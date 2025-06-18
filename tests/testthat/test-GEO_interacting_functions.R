@@ -48,7 +48,7 @@ test_that("getSuppfiles works", {
   withr::with_tempdir({
     geo_accession <- "GSE6629"
     temp_dir <- getwd()
-    getSuppfiles(GEO = geo_accession, #TODO Suppress curl download message
+    getSuppFiles(GEO = geo_accession, #TODO Suppress curl download message
                  makeDirectory = TRUE,
                  baseDir = temp_dir,
                  fetch_files = TRUE,

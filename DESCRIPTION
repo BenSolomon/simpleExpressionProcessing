@@ -14,9 +14,13 @@ Suggests:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Imports: 
+    affy (>= 1.80.0),
+    Biobase (>= 2.62.0),
     checkmate (>= 2.3.2),
     GEOquery (>= 2.70.0),
     here (>= 1.0.1),
+    limma (>= 3.58.1),
     rentrez (>= 1.2.4),
     rvest (>= 1.0.4),
+    stringr (>= 1.5.1),
     withr (>= 3.0.2)

@@ -197,7 +197,7 @@ platformCheck <- function(gpl_accession, platform_query, quiet = F){
 #'  \donttest{
 #' geo_accession <- "GSE6629"
 #' baseDir <- getwd()
-#' getSuppfiles(GEO = geo_accession,
+#' getSuppFiles(GEO = geo_accession,
 #'              makeDirectory = TRUE,
 #'              baseDir = baseDir,
 #'              fetch_files = TRUE,
@@ -210,7 +210,7 @@ platformCheck <- function(gpl_accession, platform_query, quiet = F){
 #' file.exists(output_tar) # TRUE
 #' all(file.exists(untar_files)) # TRUE
 #' }
-getSuppfiles <- function(GEO,
+getSuppFiles <- function(GEO,
                          makeDirectory = TRUE,
                          baseDir = getwd(),
                          fetch_files = TRUE,
