@@ -65,7 +65,7 @@ isValidGPL <- function(accession) {
 #' @export
 #'
 #' @examples
-#' #' \donttest{
+#' \donttest{
 #' getGPLfromGSE("GSE18606") # Return GPL6480
 #' }
 
@@ -101,7 +101,7 @@ getGPLfromGSE <- function(geo_accession){
 #' @export
 #'
 #' @examples
-#' #' \donttest{
+#' \donttest{
 #' parseGPLmetadata("GPL6480") # Return data.frame
 #' parseGPLmetadata("GPL648000000") # Error
 #' parseGPLmetadata("GSE18606") # Error
@@ -155,7 +155,7 @@ parseGPLmetadata <- function(gpl_accession){
 #' @export
 #'
 #' @examples
-#' #' #' \donttest{
+#'  \donttest{
 #' platformCheck("GPL6480", "agilent") # Returns TRUE
 #' platformCheck("GPL6480", "affy") # Returns FALSE
 #' }
@@ -168,5 +168,85 @@ platformCheck <- function(gpl_accession, platform_query, quiet = F){
                     platform_title))}
   search_result <- grepl(platform_query, platform_title, ignore.case = T)
   return(search_result)
+}
+
+###############################################################################!
+#' getSuppfiles
+#'
+#' @description
+#' Wrapper around GEOquery::getGEOSuppFiles intended to download raw
+#' microarray CEL files
+#'
+#' @param GEO String. GEO accession
+#' @param makeDirectory Logical. Whether to download files to a subfolder for the
+#' GEO accession
+#' @param baseDir String. Directory to download files or create subdirectory
+#' @param fetch_files Logical. Whether to actually download files or return
+#' names instead
+#' @param filter_regex String. Pattern to filter potential download files for
+#' @param download_method String. Takes 'auto', 'wget', libcurl', 'curl'.
+#' Specifies the download protocol for getGEOSuppFiles. On my setup, default
+#' auto (wget) had connection issues that curl solved
+#' @param unpack Logical. Whether to unpack the supplemental tar file that
+#' contains the CEL files
+#'
+#' @return NULL
+#' @export
+#'
+#' @examples
+#'  \donttest{
+#' geo_accession <- "GSE6629"
+#' baseDir <- getwd()
+#' getSuppfiles(GEO = geo_accession,
+#'              makeDirectory = TRUE,
+#'              baseDir = baseDir,
+#'              fetch_files = TRUE,
+#'              filter_regex = NULL,
+#'              download_method = "curl",
+#'              unpack = TRUE)
+#' output_tar <- sprintf("%s/%s/GSE6629_RAW.tar", baseDir, geo_accession)
+#' untar_files <- c("GSM153779.CEL.gz", "GSM153780.CEL.gz")
+#' output_untar <- sprintf("%s/%s/%s", baseDir, geo_accession, untar_files)
+#' file.exists(output_tar) # TRUE
+#' all(file.exists(untar_files)) # TRUE
+#' }
+getSuppfiles <- function(GEO,
+                         makeDirectory = TRUE,
+                         baseDir = getwd(),
+                         fetch_files = TRUE,
+                         filter_regex = NULL,
+                         download_method = "curl",
+                         unpack = TRUE) {
+  # Checks
+  all_checks <- checkmate::makeAssertCollection()
+  checkmate::assertTRUE(isValidGSE(geo_accession), add = all_checks)
+  checkmate::assertDirectoryExists(baseDir, add = all_checks)
+  checkmate::assertLogical(makeDirectory, add = all_checks)
+  checkmate::assertLogical(fetch_files, add = all_checks)
+  checkmate::assertLogical(unpack, add = all_checks)
+  checkmate::assertString(filter_regex, null.ok = TRUE, add = all_checks)
+  checkmate::assertChoice(
+    download_method,
+    choices = c("curl", "auto", "wget", "libcurl"),
+    add = all_checks)
+  if (all_checks$isEmpty()==F) {purrr::map(all_checks$getMessages(),print);checkmate::reportAssertions(all_checks)}
+
+  # Set download method
+  options('download.file.method.GEOquery' = download_method) # Auto, wget, and libcurl are slow for me
+  # Download supplemental files
+  GEOquery::getGEOSuppFiles(
+    GEO = GEO,
+    makeDirectory = makeDirectory,
+    baseDir = baseDir,
+    fetch_files = fetch_files,
+    filter_regex = filter_regex
+  )
+  # Unpack tar
+  if (unpack) {
+    tardir <- sprintf("%s/%s", baseDir, GEO)
+    downloaded_files <- list.files(tardir, full.names = T)
+    tarfile <- downloaded_files[grepl("tar$", downloaded_files)]
+    lapply(tarfile, function(f) untar(tarfile = f, exdir = tardir))
+  }
 }
 

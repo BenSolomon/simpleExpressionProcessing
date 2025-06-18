@@ -36,6 +36,29 @@ test_that("parseGPLmetadata works", {
 test_that("platformCheck works", {
   testthat::skip_if_offline()
   testthat::skip_on_cran()
-  expect_equal(platformCheck("GPL6480", "agilent"), TRUE)
-  expect_equal(platformCheck("GPL6480", "affy"), TRUE)
+  expect_equal(platformCheck("GPL6480", "agilent", quiet = T), TRUE)
+  expect_equal(platformCheck("GPL6480", "affy", quiet = T), FALSE)
+})
+
+test_that("getSuppfiles works", {
+  testthat::skip_if_offline()
+  testthat::skip_on_cran()
+  # withr will create a tempdir that is automatically
+  # removed after with_tempdir statement is complete
+  withr::with_tempdir({
+    geo_accession <- "GSE6629"
+    temp_dir <- getwd()
+    getSuppfiles(GEO = geo_accession, #TODO Suppress curl download message
+                 makeDirectory = TRUE,
+                 baseDir = temp_dir,
+                 fetch_files = TRUE,
+                 filter_regex = NULL,
+                 download_method = "curl",
+                 unpack = TRUE)
+    output_tar <- sprintf("%s/%s/GSE6629_RAW.tar", temp_dir, geo_accession)
+    untar_files <- c("GSM153779.CEL.gz", "GSM153780.CEL.gz")
+    output_untar <- sprintf("%s/%s/%s", temp_dir, geo_accession, untar_files)
+    expect_true(file.exists(output_tar))
+    expect_true(all(file.exists(output_untar)))
+  })
 })
