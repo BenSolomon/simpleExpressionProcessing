@@ -219,7 +219,7 @@ getSuppFiles <- function(GEO,
                          unpack = TRUE) {
   # Checks
   all_checks <- checkmate::makeAssertCollection()
-  checkmate::assertTRUE(isValidGSE(geo_accession), add = all_checks)
+  checkmate::assertTRUE(isValidGSE(GEO), add = all_checks)
   checkmate::assertDirectoryExists(baseDir, add = all_checks)
   checkmate::assertLogical(makeDirectory, add = all_checks)
   checkmate::assertLogical(fetch_files, add = all_checks)

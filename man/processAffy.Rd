@@ -18,11 +18,11 @@ Processing pipeline for raw affymetrics array data. Utilizes affy package
 }
 \examples{
 \donttest{
+# Download an Affymetrix dataset
 geo_accession <- "GSE6629"
 temp_dir <- getwd()
 gse_dir <- sprintf("\%s/\%s", temp_dir, geo_accession)
-
-getSuppFiles(GEO = geo_accession, #TODO Suppress curl download message
+getSuppFiles(GEO = geo_accession,
              makeDirectory = TRUE,
              baseDir = temp_dir,
              fetch_files = TRUE,
@@ -30,7 +30,10 @@ getSuppFiles(GEO = geo_accession, #TODO Suppress curl download message
              download_method = "curl",
              unpack = TRUE)
 
+# Process dataset
 affy_output_list <- processAffy(gse_dir)
+
+# Test output
 names(affy_output_list) # c("raw_expression", "normalized_expression")
 dim(affy_output_list$raw_expression) # c(1354896, 2)
 dim(affy_output_list$normalized_expression) # c(54675, 2)
