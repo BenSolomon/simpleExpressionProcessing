@@ -94,6 +94,8 @@ getGPLfromGSE <- function(geo_accession){
 #' package, but this is similarly slow and also involves download of the
 #' entire GPL data package in GEO, which is typically many MBs in size. #'
 #'
+#' @importFrom magrittr %>%
+#'
 #' @param gpl_accession String of GPL accession. Validity will be checked by
 #' isValidGPL
 #'
@@ -101,7 +103,7 @@ getGPLfromGSE <- function(geo_accession){
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' parseGPLmetadata("GPL6480") # Return data.frame
 #' parseGPLmetadata("GPL648000000") # Error
 #' parseGPLmetadata("GSE18606") # Error
@@ -150,6 +152,7 @@ parseGPLmetadata <- function(gpl_accession){
 #'
 #' @param gpl_accession String of GPL accession. Validity will be checked by
 #' @param platform_query String representing platform of interest
+#' @param quiet Logical. Whether to how function is searching for platform
 #'
 #' @return Logical
 #' @export
@@ -250,3 +253,53 @@ getSuppFiles <- function(GEO,
   }
 }
 
+###############################################################################!
+#' getGEOData_retryWrapper
+#'
+#' @description
+#' Wrapper around getGEOData that will repeat getGEOData for a given accession
+#' until data is successfully downloaded, up to n-number of total attempts
+#'
+#' @details
+#' getGEOData can fail, returning 'Warning: Unable to correctly download
+#' geo_accession . Dataset will be excluded from this object.' However, this can
+#' be due to a connection error, not because no data exists
+#'
+#' @param geo_accession GEO accession ID
+#' @param n Max number of times getGEOData should be retried before giving up
+#'
+#' @return List. A MetaIntegrator GEO object
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' gse <- getGEOData_retryWrapper("GSE18606")
+#' MetaIntegrator::checkDataObject(gse$originalData[[1]], "Dataset") # TRUE
+#' }
+getGEOData_retryWrapper <- function(geo_accession, n = 10){
+  # Checks
+  all_checks <- checkmate::makeAssertCollection()
+  checkmate::assertTRUE(isValidGSE(geo_accession), add = all_checks)
+  checkmate::assertDouble(n, lower = 1, add = all_checks)
+  if (all_checks$isEmpty()==F) {purrr::map(all_checks$getMessages(),print);checkmate::reportAssertions(all_checks)}
+
+  message(sprintf("\n%s: Attempt 1 of %s", geo_accession, n))
+  output <- MetaIntegrator::getGEOData(geo_accession)
+
+  if (length(output[["originalData"]]) != 0) {
+    return(output)
+  }
+
+  i <- 1
+  while (length(output[["originalData"]]) == 0 & i < n){
+    message(sprintf("\n%s: Attempt %s of %s", geo_accession, i+1, n))
+    output <- MetaIntegrator::getGEOData(geo_accession)
+    i <- i+1
+  }
+
+  if (length(output[["originalData"]]) != 0) {
+    return(output)
+  } else {
+    stop(sprintf("\n%s: Unsuccessful after %s attempt(s)\nConsider increasing value of n", geo_accession, n))
+  }
+}

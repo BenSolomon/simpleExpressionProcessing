@@ -25,7 +25,7 @@ package, but this is similarly slow and also involves download of the
 entire GPL data package in GEO, which is typically many MBs in size. #'
 }
 \examples{
-\donttest{
+\dontrun{
 parseGPLmetadata("GPL6480") # Return data.frame
 parseGPLmetadata("GPL648000000") # Error
 parseGPLmetadata("GSE18606") # Error

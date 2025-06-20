@@ -85,11 +85,12 @@ processAffy <- function(cel_dir){
 #' have no corresponding gene. Default is FALSE since affy pipeline does not
 #' do this.
 #'
-#' @return
+#' @return List of matrices. Two expression matrices from processed affy
+#' object, one of raw data, one of normalized data
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' # Download an Agilent dataset
 #' geo_accession <- "GSE16999"
 #' temp_dir <- getwd()

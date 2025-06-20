@@ -10,6 +10,8 @@ platformCheck(gpl_accession, platform_query, quiet = F)
 \item{gpl_accession}{String of GPL accession. Validity will be checked by}
 
 \item{platform_query}{String representing platform of interest}
+
+\item{quiet}{Logical. Whether to how function is searching for platform}
 }
 \value{
 Logical

@@ -62,3 +62,11 @@ test_that("getSuppfiles works", {
     expect_true(all(file.exists(output_untar)))
   })
 })
+
+test_that("getGEOData_retryWrapper works", {
+  testthat::skip_if_offline()
+  testthat::skip_on_cran()
+  gse <- getGEOData_retryWrapper("GSE18606")
+  expect_true(MetaIntegrator::checkDataObject(gse$originalData[[1]], "Dataset"))
+
+})

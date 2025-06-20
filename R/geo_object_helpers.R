@@ -16,7 +16,7 @@
 #' @return NULL or fails
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #'   .checkmateSingleMetaIntegratorObject(GSE6629_GEO) # Returns NULL
 #'   .checkmateSingleMetaIntegratorObject(GSE6629_expressionRaw) # Returns error
 #' }
@@ -93,6 +93,9 @@ addRawExprMatrix <- function(geo_object, expr){
 #' @export
 #'
 #' @examples
+#' gse <- addReprocessedExprMatrix(GSE6629_GEO, GSE6629_expressionNormalized)
+#' "exprGEO" %in% names(gse$originalData[[1]]) # TRUE
+#' gse$originalData[[1]]$exprGEO == GSE6629_GEO$originalData[[1]]$expr # TRUE
 addReprocessedExprMatrix <- function(geo_object, expr) {
 
   # Check geo_object
