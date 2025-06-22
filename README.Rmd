@@ -39,7 +39,7 @@ This workflow involves the following steps:
 - Supplemental data files are downloaded with `GEOquery`, such as raw `.CEL` files from the Affymetrix microarray platform
 - The raw expression files are normalized 
 - The GEO data object is modified in the following ways:
-  - The original `expr` slot is reassigned to the `exprGEO` slot, to indicate it represents the author normalized data
+  - The original `expr` slot is reassigned to the `exprGEO` slot, to indicate it represents the authors' normalized data
   - The raw, non-normalized data from the supplemental files are assigned to the `exprRAW` slot
   - The user normalized data is added to the `expr` slot, which is the slot used by downstream applications using MetaIntegrator GEO objects
 - All expression slots (i.e. `expr`, `exprRAW`, and `exprGEO`) are visualized with boxplots to evaluate the normalization process
@@ -48,7 +48,7 @@ This workflow involves the following steps:
 devtools::load_all() # Only needed in package development environment
 accession <- "GSE16797"
 
-# Get GEO daat
+# Get GEO data
 gse <- MetaIntegrator::getGEOData(accession)
 
 # Get GEO supplemental data, including raw data, and process

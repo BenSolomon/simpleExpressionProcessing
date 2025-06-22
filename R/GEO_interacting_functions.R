@@ -174,6 +174,38 @@ platformCheck <- function(gpl_accession, platform_query, quiet = F){
 }
 
 ###############################################################################!
+#' platformGuess
+
+#' @description
+#' Attempts to check parese and return the platform of a GPL accession matches
+#' a query platform
+#'
+#' @details
+#' Intended for uses in input checking for microarray processing. Want to be
+#' able to detect
+#'
+#' @param gpl_accession String of GPL accession. Validity will be checked by
+#' @param quiet Logical. Whether to how function is searching for platform
+#'
+#' @return Logical
+#' @export
+#'
+#' @examples
+#' \donttest{
+#' platformGuess("GPL6480") # Return "agilent"
+#' }
+platformGuess <- function(gpl_accession, quiet = F){
+  patterns <- c("affy", "agilent")
+  df <- parseGPLmetadata(gpl_accession)
+  platform_title <- df$value[df$parameter == "Title"]
+  output_check <- sapply(patterns, function(p) grepl(p, platform_title, ignore.case = T))
+  output <- patterns[output_check]
+  output <- ifelse(length(output) != 1,
+                   NA, output)
+  return(output)
+}
+
+###############################################################################!
 #' getSuppfiles
 #'
 #' @description

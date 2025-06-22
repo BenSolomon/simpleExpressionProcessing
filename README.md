@@ -51,7 +51,7 @@ devtools::load_all() # Only needed in package development environment
 #> Setting options('GEOquery.inmemory.gpl'=FALSE)
 accession <- "GSE16797"
 
-# Get GEO daat
+# Get GEO data
 gse <- MetaIntegrator::getGEOData(accession)
 #> Found 1 file(s)
 #> GSE16797_series_matrix.txt.gz

@@ -40,6 +40,13 @@ test_that("platformCheck works", {
   expect_equal(platformCheck("GPL6480", "affy", quiet = T), FALSE)
 })
 
+test_that("platformGuess works", {
+  testthat::skip_if_offline()
+  testthat::skip_on_cran()
+  expect_equal(platformGuess("GPL6480"), "agilent")
+})
+
+
 test_that("getSuppfiles works", {
   testthat::skip_if_offline()
   testthat::skip_on_cran()
