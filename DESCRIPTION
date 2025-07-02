@@ -16,6 +16,8 @@ Imports:
     affy (>= 1.80.0),
     Biobase (>= 2.62.0),
     checkmate (>= 2.3.2),
+    data.table (>= 1.17.4),
+    DESeq2 (>= 1.42.1),
     dplyr (>= 1.1.4),
     GEOquery (>= 2.70.0),
     here (>= 1.0.1),

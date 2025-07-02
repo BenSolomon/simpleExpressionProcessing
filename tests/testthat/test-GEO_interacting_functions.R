@@ -75,5 +75,28 @@ test_that("getGEOData_retryWrapper works", {
   testthat::skip_on_cran()
   gse <- getGEOData_retryWrapper("GSE18606")
   expect_true(MetaIntegrator::checkDataObject(gse$originalData[[1]], "Dataset"))
-
 })
+
+
+test_that(".getNCBIdataURLs works", {
+  testthat::skip_if_offline()
+  testthat::skip_on_cran()
+  output_urls <- .getNCBIdataURLs(GEO = "GSE158395")
+  expected_expression_url <- "https://www.ncbi.nlm.nih.gov/geo/download/?type=rnaseq_counts&acc=GSE158395&format=file&file=GSE158395_raw_counts_GRCh38.p13_NCBI.tsv.gz"
+  expected_annotation_url <- "https://www.ncbi.nlm.nih.gov/geo/download/?format=file&type=rnaseq_counts&file=Human.GRCh38.p13.annot.tsv.gz"
+  expect_equal(output_urls$expression_url, expected_expression_url)
+  expect_equal(output_urls$annotation_url, expected_annotation_url)
+})
+
+test_that("getRNAcountMatrixNCBI works", {
+  testthat::skip_if_offline()
+  testthat::skip_on_cran()
+  expected_files <- c("GSE158395/GSE158395_raw_counts_GRCh38.p13_NCBI.tsv.gz",
+                      "GSE158395/Human.GRCh38.p13.annot.tsv.gz")
+  withr::with_tempdir({
+    getRNAcountMatrixNCBI(GEO = "GSE158395")
+    output_files <- list.files(recursive = T)
+  })
+  expect_setequal(output_files, expected_files)
+})
+

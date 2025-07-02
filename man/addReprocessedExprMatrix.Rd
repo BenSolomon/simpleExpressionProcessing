@@ -4,7 +4,7 @@
 \alias{addReprocessedExprMatrix}
 \title{addReprocessedExprMatrix}
 \usage{
-addReprocessedExprMatrix(geo_object, expr)
+addReprocessedExprMatrix(geo_object, expr, mode = "microarray")
 }
 \arguments{
 \item{geo_object}{List of format created by getGEO}

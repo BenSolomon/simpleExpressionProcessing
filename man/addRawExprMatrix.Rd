@@ -4,7 +4,7 @@
 \alias{addRawExprMatrix}
 \title{addRawExprMatrix}
 \usage{
-addRawExprMatrix(geo_object, expr)
+addRawExprMatrix(geo_object, expr, mode = "microarray")
 }
 \arguments{
 \item{geo_object}{List of format created by MetaIntegrator::getGEOData}
