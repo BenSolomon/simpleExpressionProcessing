@@ -37,7 +37,7 @@ annotation file version used in the NCBI pipeline.
 \donttest{
   withr::with_tempdir({
     getRNAcountMatrixNCBI(GEO = "GSE158395")
-    output_files <- list.files(recursive = T)
+    output_files <- list.files(recursive = TRUE)
     })
   output_files
   # Should include:

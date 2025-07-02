@@ -95,7 +95,7 @@ test_that("getRNAcountMatrixNCBI works", {
                       "GSE158395/Human.GRCh38.p13.annot.tsv.gz")
   withr::with_tempdir({
     getRNAcountMatrixNCBI(GEO = "GSE158395")
-    output_files <- list.files(recursive = T)
+    output_files <- list.files(recursive = TRUE)
   })
   expect_setequal(output_files, expected_files)
 })

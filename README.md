@@ -130,10 +130,6 @@ gse <- fixMetaIntegratorForRNAseq(gse)
 withr::with_tempdir({
   getRNAcountMatrixNCBI(accession)
   reprocess_output <- processRNA(sprintf("./%s", accession))
-  
-  # # Alternatively, can use `processAgilent` for Agilent platform
-  # reprocess_output <- processAgilent(sprintf("./%s", accession)) 
-  
 })
 
 # Add raw and reprocessed expression matrices to original MetaIntegrator
