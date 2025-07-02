@@ -31,17 +31,12 @@ jobs:
         with:
           use-public-rspm: true
 
-      - name: Install MetaIntegrator due to archived package
-        run: |
-          install.packages("https://cran.r-project.org/src/contrib/Archive/MetaIntegrator/MetaIntegrator_2.1.3.tar.gz",
-                           repos = NULL, type = "source")
+      - name: Install renv
+        run: install.packages("renv")
         shell: Rscript {0}
 
-      - name: Install dependencies manually
-        run: |
-          if (!require(remotes)) install.packages("remotes")
-          if (!require(pkgdown)) install.packages("pkgdown")
-          remotes::install_deps(dependencies = TRUE)
+      - name: Restore packages from renv.lock
+        run: renv::restore()
         shell: Rscript {0}
 
       - name: Build site
