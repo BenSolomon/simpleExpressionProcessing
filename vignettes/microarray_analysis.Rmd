@@ -1,0 +1,45 @@
+---
+title: "microarray_analysis"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{microarray_analysis}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(simpleExpressionProcessing)
+```
+
+```{r}
+accession <- "GSE16797"
+
+# Get GEO data
+gse <- MetaIntegrator::getGEOData(accession)
+
+# Get GEO supplemental data, including raw data, and process
+## withr used to create a tempdir for supplemental files for purpose of demo
+withr::with_tempdir({
+  getSuppFiles(accession)
+  reprocess_output <- processAffy(sprintf("./%s", accession))
+  
+  # # Alternatively, can use `processAgilent` for Agilent platform
+  # reprocess_output <- processAgilent(sprintf("./%s", accession)) 
+  
+})
+
+# Add raw and reprocessed expression matrices to original MetaIntegrator
+# GEO object
+gse <- addRawExprMatrix(gse, reprocess_output$raw_expression)
+gse <- addReprocessedExprMatrix(gse, reprocess_output$normalized_expression)
+
+# Visualize effect of processing
+geoAllBoxplots(gse)
+```
