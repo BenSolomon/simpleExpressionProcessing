@@ -46,10 +46,11 @@ jobs:
         run: renv::restore()
         shell: Rscript {0}
 
-      - uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          extra-packages: any::pkgdown, local::.
-          dependencies: FALSE
+      - name: Install pkgdown and local package
+        run: |
+          install.packages("pkgdown")
+          install.packages(".", repos = NULL, type = "source")
+        shell: Rscript {0}
 
       - name: Build site
         run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
