@@ -1,0 +1,8 @@
+pandoc: 3.1.11
+pkgdown: 2.1.3
+pkgdown_sha: ~
+articles: {}
+last_built: 2025-07-03T22:27Z
+urls:
+  reference: https://bensolomon.github.io/simpleExpressionProcessing/reference
+  article: https://bensolomon.github.io/simpleExpressionProcessing/articles
