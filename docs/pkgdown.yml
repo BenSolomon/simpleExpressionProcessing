@@ -8,7 +8,4 @@ last_built: 2025-07-04T00:13Z
 urls:
   reference: https://bensolomon.github.io/simpleExpressionProcessing/reference
   article: https://bensolomon.github.io/simpleExpressionProcessing/articles
-homee:
-  links:
-    - text: "View source code"
-      href: "https://github.com/BenSolomon/simpleExpressionProcessing"
+

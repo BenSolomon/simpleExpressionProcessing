@@ -2,3 +2,7 @@ url: https://bensolomon.github.io/simpleExpressionProcessing/
 template:
   bootstrap: 5
 
+repo:
+  url:
+    home: https://github.com/BenSolomon/simpleExpressionProcessing
+
