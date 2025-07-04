@@ -18,4 +18,4 @@ GSE158395_GEO
 Data from the GSE6629 GEO series in a MetaIntegrator format.
 An RNAseq dataset, so does not include any expression data naitively.
 }
-\keyword{datasets}
+\keyword{data}

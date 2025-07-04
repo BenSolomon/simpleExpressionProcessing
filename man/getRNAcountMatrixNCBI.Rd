@@ -2,7 +2,7 @@
 % Please edit documentation in R/GEO_interacting_functions.R
 \name{getRNAcountMatrixNCBI}
 \alias{getRNAcountMatrixNCBI}
-\title{Title}
+\title{getRNAcountMatrixNCBI}
 \usage{
 getRNAcountMatrixNCBI(
   GEO,
@@ -46,3 +46,4 @@ annotation file version used in the NCBI pipeline.
 }
 
 }
+\keyword{geo_interacting_functions}

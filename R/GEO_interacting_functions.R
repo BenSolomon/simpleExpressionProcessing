@@ -1,7 +1,10 @@
 ###############################################################################!
 #' isValidGSE
 #'
+#' @description
 #' Check whether a GEO accession is valid
+#'
+#' @keywords geo_interacting_functions
 #'
 #' @param accession String of GEO accession to test
 #'
@@ -25,7 +28,10 @@ isValidGSE <- function(accession) {
 ###############################################################################!
 #' isValidGPL
 #'
+#' @description
 #' Check whether or not a GPL platform accession is valid
+#'
+#' @keywords geo_interacting_functions
 #'
 #' @param accession String of GPL accession to test
 #'
@@ -58,6 +64,8 @@ isValidGPL <- function(accession) {
 #' GPL accessions can also be obtained from a GEOquery object. However, that
 #' requires either downloading the whole dataset or loading a saved dataset.
 #' This allows querying of the GPL accession without downloading any data.
+#'
+#' @keywords geo_interacting_functions
 #'
 #' @param geo_accession String of GEO accession
 #'
@@ -93,6 +101,8 @@ getGPLfromGSE <- function(geo_accession){
 #' Somewhat slow for the task. Could also be performed by getGEO in geoQuery
 #' package, but this is similarly slow and also involves download of the
 #' entire GPL data package in GEO, which is typically many MBs in size. #'
+#'
+#' @keywords geo_interacting_functions
 #'
 #' @importFrom magrittr %>%
 #'
@@ -150,6 +160,8 @@ parseGPLmetadata <- function(gpl_accession){
 #' Intended for uses in input checking for microarray processing. Want to be
 #' able to detect
 #'
+#' @keywords geo_interacting_functions
+#'
 #' @param gpl_accession String of GPL accession. Validity will be checked by
 #' @param platform_query String representing platform of interest
 #' @param quiet Logical. Whether to how function is searching for platform
@@ -184,6 +196,8 @@ platformCheck <- function(gpl_accession, platform_query, quiet = F){
 #' Intended for uses in input checking for microarray processing. Want to be
 #' able to detect
 #'
+#' @keywords geo_interacting_functions
+#'
 #' @param gpl_accession String of GPL accession. Validity will be checked by
 #' @param quiet Logical. Whether to how function is searching for platform
 #'
@@ -211,6 +225,8 @@ platformGuess <- function(gpl_accession, quiet = F){
 #' @description
 #' Wrapper around GEOquery::getGEOSuppFiles intended to download raw
 #' microarray CEL files
+#'
+#' @keywords geo_interacting_functions
 #'
 #' @param GEO String. GEO accession
 #' @param makeDirectory Logical. Whether to download files to a subfolder for the
@@ -297,6 +313,8 @@ getSuppFiles <- function(GEO,
 #' geo_accession . Dataset will be excluded from this object.' However, this can
 #' be due to a connection error, not because no data exists
 #'
+#' @keywords geo_interacting_functions
+#'
 #' @param geo_accession GEO accession ID
 #' @param n Max number of times getGEOData should be retried before giving up
 #'
@@ -337,7 +355,6 @@ getGEOData_retryWrapper <- function(geo_accession, n = 10){
 }
 
 ###############################################################################!
-
 #' .getNCBIdataURLs
 #'
 #' @description
@@ -351,6 +368,8 @@ getGEOData_retryWrapper <- function(geo_accession, n = 10){
 #' from raw FASTQ sequencing files submitted to SRA. This function specifically
 #' obtains the URLs for the count matrix resulting from this pipeline and the
 #' annotation file version used in the NCBI pipeline.
+#'
+#' @keywords geo_interacting_functions
 #'
 #' @param GEO String. GEO accession
 #'
@@ -395,7 +414,7 @@ getGEOData_retryWrapper <- function(geo_accession, n = 10){
 }
 
 ###############################################################################!
-#' Title
+#' getRNAcountMatrixNCBI
 #'
 #' @description
 #' Downloads the (1) RNA seq raw count matrix and (2) Human gene annotation
@@ -408,6 +427,8 @@ getGEOData_retryWrapper <- function(geo_accession, n = 10){
 #' from raw FASTQ sequencing files submitted to SRA. This function specifically
 #' downloads the count matrix resulting from this pipeline as well as the
 #' annotation file version used in the NCBI pipeline.
+#'
+#' @keywords geo_interacting_functions
 #'
 #' @param GEO String. GEO accession
 #' @param makeDirectory Logical. Whether to download files to a subfolder for the

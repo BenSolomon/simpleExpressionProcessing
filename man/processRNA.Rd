@@ -33,3 +33,4 @@ NCBI standardized RNAseq processing pipeline
   dim(output_list$normalized_expression) # Should be 39374 x 13
 }
 }
+\keyword{rna_processing_functions}

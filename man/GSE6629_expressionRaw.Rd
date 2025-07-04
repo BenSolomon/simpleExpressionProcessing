@@ -17,4 +17,4 @@ GSE6629_expressionRaw
 \description{
 Data from the supplemental files in the GSE6629 GEO series
 }
-\keyword{datasets}
+\keyword{data}

@@ -35,3 +35,4 @@ NCBI standardized RNAseq processing pipeline
 }
 
 }
+\keyword{rna_processing_functions}

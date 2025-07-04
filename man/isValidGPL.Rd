@@ -22,3 +22,4 @@ isValidGPL("GPL648000000") # Return FALSE
 isValidGPL("GSE18606") # Return FALSE
 }
 }
+\keyword{geo_interacting_functions}

@@ -29,3 +29,4 @@ gse <- getGEOData_retryWrapper("GSE18606")
 MetaIntegrator::checkDataObject(gse$originalData[[1]], "Dataset") # TRUE
 }
 }
+\keyword{geo_interacting_functions}

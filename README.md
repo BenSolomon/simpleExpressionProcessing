@@ -44,9 +44,9 @@ See vignettes and documentation at:
 <https://bensolomon.github.io/simpleExpressionProcessing/>
 
 - [Microarray
-  processing](https://bensolomon.github.io/simpleExpressionProcessing/)
+  processing](https://bensolomon.github.io/simpleExpressionProcessing/articles/microarray_analysis.html)
 - [RNAseq
-  processing](https://bensolomon.github.io/simpleExpressionProcessing/)
+  processing](https://bensolomon.github.io/simpleExpressionProcessing/articles/rnaseq_analysis.html)
 
 ## General workflow description
 

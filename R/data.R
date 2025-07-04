@@ -4,6 +4,8 @@
 #' Data from the GSE6629 GEO series in a MetaIntegrator format.
 #' A microarray dataset
 #'
+#' @keywords data
+#'
 #' @format ## `GSE6629_GEO`
 #' MetaIntegrator list
 
@@ -15,6 +17,8 @@
 #' GSE6629 Raw expression data
 #'
 #' Data from the supplemental files in the GSE6629 GEO series
+#'
+#' @keywords data
 #'
 #' @format ## `GSE6629_expressionRaw`
 #' Matrix
@@ -29,6 +33,8 @@
 #'
 #' Data from the supplemental files in the GSE6629 GEO series after normalization
 #'
+#' @keywords data
+#'
 #' @format ## `GSE6629_expressionNormalized`
 #' Matrix
 
@@ -41,6 +47,8 @@
 #'
 #' Data from the GSE6629 GEO series in a MetaIntegrator format.
 #' An RNAseq dataset, so does not include any expression data naitively.
+#'
+#' @keywords data
 #'
 #' @format ## `GSE158395_GEO`
 #' MetaIntegrator list

@@ -23,6 +23,7 @@
   </ul></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/BenSolomon/simpleExpressionProcessing" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
 
@@ -76,7 +77,6 @@ NCBI standardized RNAseq processing pipeline</p>
 <span class="r-in"><span>    <span class="fu"><a href="getRNAcountMatrixNCBI.html">getRNAcountMatrixNCBI</a></span><span class="op">(</span>GEO <span class="op">=</span> <span class="st">"GSE158395"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>    <span class="va">output_list</span> <span class="op">&lt;-</span> <span class="fu">processRNA</span><span class="op">(</span>gse_dir <span class="op">=</span> <span class="st">"GSE158395"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="op">}</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>replacing previous import ‘S4Arrays::makeNindexFromArrayViewport’ by ‘DelayedArray::makeNindexFromArrayViewport’ when loading ‘SummarizedExperiment’</span>
 <span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">output_list</span><span class="op">$</span><span class="va">normalized_expression</span><span class="op">)</span> <span class="co"># Should be "raw_expression", "normalized_expression"</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> NULL</span>
 <span class="r-in"><span>  <span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">output_list</span><span class="op">$</span><span class="va">normalized_expression</span><span class="op">)</span> <span class="co"># Should be 39374 x 13</span></span></span>

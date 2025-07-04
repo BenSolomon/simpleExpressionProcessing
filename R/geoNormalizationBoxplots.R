@@ -5,6 +5,8 @@
 #' values for all samples in an expression #' matrix, broken up by which
 #' expression matrix, and which dataset.
 #'
+#' @keywords plots
+#'
 #' @param geo_object List of format created by MetaIntegrator::getGEOData
 #'
 #' @return Base R plot

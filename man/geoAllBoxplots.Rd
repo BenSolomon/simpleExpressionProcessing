@@ -23,3 +23,4 @@ expression matrix, and which dataset.
   geoAllBoxplots(GSE6629_GEO)
 }
 }
+\keyword{plots}

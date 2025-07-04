@@ -63,3 +63,4 @@ dim(agilent_output_list$raw_expression) # c(45015, 2)
 dim(agilent_output_list$normalized_expression) # c(33164, 2)
 }
 }
+\keyword{microarray_processing_functions}

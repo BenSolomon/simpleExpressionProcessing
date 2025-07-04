@@ -18,4 +18,4 @@ GSE6629_GEO
 Data from the GSE6629 GEO series in a MetaIntegrator format.
 A microarray dataset
 }
-\keyword{datasets}
+\keyword{data}

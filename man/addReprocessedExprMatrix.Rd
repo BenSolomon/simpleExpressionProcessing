@@ -33,3 +33,4 @@ gse <- addReprocessedExprMatrix(GSE6629_GEO, GSE6629_expressionNormalized)
 "exprGEO" \%in\% names(gse$originalData[[1]]) # TRUE
 gse$originalData[[1]]$exprGEO == GSE6629_GEO$originalData[[1]]$expr # TRUE
 }
+\keyword{geo_object_helpers}

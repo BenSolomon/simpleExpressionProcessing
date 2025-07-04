@@ -6,3 +6,41 @@ repo:
   url:
     home: https://github.com/BenSolomon/simpleExpressionProcessing
 
+
+reference:
+  - title: "Data"
+    desc: >
+      Various small datasets used by function examples
+    contents:
+    - has_keyword("data")
+
+  - title: "GEO interacting functions"
+    desc: >
+      Collection of functions that interact with NCBI GEO to download or parse
+      data or metadata
+    contents:
+    - has_keyword("geo_interacting_functions")
+
+  - title: "GEO object helpers"
+    desc: >
+      Functions related to working with MetaIntegrator GEO objects
+    contents:
+    - has_keyword("geo_object_helpers")
+
+  - title: "RNAseq processing functions"
+    desc: >
+      Functions related to normalizing raw RNAseq data
+    contents:
+    - has_keyword("rna_processing_functions")
+
+  - title: "Microarray processing functions"
+    desc: >
+      Functions related to normalizing raw microarray data
+    contents:
+    - has_keyword("microarray_processing_functions")
+
+  - title: "Plotting functions"
+    contents:
+    - has_keyword("plots")
+
+

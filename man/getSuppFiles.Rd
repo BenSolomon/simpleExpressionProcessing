@@ -56,3 +56,4 @@ file.exists(output_tar) # TRUE
 all(file.exists(untar_files)) # TRUE
 }
 }
+\keyword{geo_interacting_functions}

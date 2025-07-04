@@ -31,3 +31,4 @@ parseGPLmetadata("GPL648000000") # Error
 parseGPLmetadata("GSE18606") # Error
 }
 }
+\keyword{geo_interacting_functions}

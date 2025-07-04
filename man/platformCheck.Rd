@@ -30,3 +30,4 @@ platformCheck("GPL6480", "agilent") # Returns TRUE
 platformCheck("GPL6480", "affy") # Returns FALSE
 }
 }
+\keyword{geo_interacting_functions}

@@ -9,6 +9,8 @@
 #' Specifically depends on raw count matrix and annotation file used in
 #' NCBI standardized RNAseq processing pipeline
 #'
+#' @keywords rna_processing_functions
+#'
 #' @param NCBI_count_path String. Path to NCBI "Series RNA-seq raw counts matrix"
 #' @param NCBI_annotation_path String. Path to NCBI "Human gene annotation table"
 #'
@@ -58,6 +60,8 @@ NCBIcountToMatrix <- function(NCBI_count_path, NCBI_annotation_path){
 #' @details
 #' Specifically depends on raw count matrix and annotation file used in
 #' NCBI standardized RNAseq processing pipeline
+#'
+#' @keywords rna_processing_functions
 #'
 #' @param gse_dir String representing directory path where raw NCBI expression
 #' matrix file and NCBI pipeline annotation file are located

@@ -27,3 +27,4 @@ able to detect
 platformGuess("GPL6480") # Return "agilent"
 }
 }
+\keyword{geo_interacting_functions}

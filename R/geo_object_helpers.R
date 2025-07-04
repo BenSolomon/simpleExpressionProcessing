@@ -10,6 +10,8 @@
 #' class check. Instead they represent a list that follows a standard pattern.
 #' This function checks several of these expected patterns.
 #'
+#' @keywords geo_object_helpers
+#'
 #'
 #' @param geo_object List of format created by MetaIntegrator::getGEOData
 #'
@@ -42,6 +44,8 @@
 #' @description
 #' Add an exprRaw slot to a geo_object containing a user specified
 #' raw data expression matrix
+#'
+#' @keywords geo_object_helpers
 #'
 #' @param geo_object List of format created by MetaIntegrator::getGEOData
 #' @param expr Matrix containing raw expression data
@@ -97,6 +101,8 @@ addRawExprMatrix <- function(geo_object, expr, mode = "microarray"){
 #' and reassigns the original, author-provided matrix to $exprGEO. Adds
 #' additional explanatory comments to $expr_comments and $exprGEO_comments.
 #' $ Uses `checkmate` to assert certain conditions.
+#'
+#' @keywords geo_object_helpers
 #'
 #' @param geo_object List of format created by getGEO
 #' @param expr Matrix. Matching dimensions of $expr in geo_object and rownames
@@ -173,6 +179,8 @@ addReprocessedExprMatrix <- function(geo_object, expr, mode = "microarray") {
 #' This function creates near-empty data in the expected slots to all
 #' a MetaIntegrator object on RNA seq data to pass the
 #' `MetaIntegrator::checkDataObject` check
+#'
+#' @keywords geo_object_helpers
 #'
 #' @param geo_object
 #'

@@ -38,3 +38,4 @@ MetaIntegrator::checkDataObject(gse_rna_original$originalData[[1]], "Dataset")
 # Returns TRUE
 MetaIntegrator::checkDataObject(gse_rna_fixed$originalData[[1]], "Dataset")
 }
+\keyword{geo_object_helpers}

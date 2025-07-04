@@ -25,3 +25,4 @@ gse <- addRawExprMatrix(GSE6629_GEO, GSE6629_expressionRaw)
 "exprRaw" \%in\% names(gse$originalData[[1]]) # TRUE
 gse$originalData[[1]]$exprRaw == GSE6629_expressionRaw # TRUE
 }
+\keyword{geo_object_helpers}

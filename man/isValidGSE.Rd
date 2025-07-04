@@ -21,3 +21,4 @@ isValidGSE("GSE18606") # Return TRUE
 isValidGSE("GSE18606a") # Return FALSE
 }
 }
+\keyword{geo_interacting_functions}

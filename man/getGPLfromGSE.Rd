@@ -26,3 +26,4 @@ This allows querying of the GPL accession without downloading any data.
 getGPLfromGSE("GSE18606") # Return GPL6480
 }
 }
+\keyword{geo_interacting_functions}

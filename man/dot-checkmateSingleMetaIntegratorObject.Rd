@@ -27,3 +27,4 @@ This function checks several of these expected patterns.
   .checkmateSingleMetaIntegratorObject(GSE6629_expressionRaw) # Returns error
 }
 }
+\keyword{geo_object_helpers}

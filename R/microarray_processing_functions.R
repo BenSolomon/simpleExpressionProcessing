@@ -4,6 +4,8 @@
 #' @description
 #' Processing pipeline for raw affymetrics array data. Utilizes affy package
 #'
+#' @keywords microarray_processing_functions
+#'
 #' @param cel_dir String. Directory containing CEL files to process
 #'
 #' @return List of matrices. Two expression matrices from processed affy
@@ -76,6 +78,8 @@ processAffy <- function(cel_dir){
 #' symbol. However, this is currently commented out since this is not done
 #' in the affy workflow and significantly changes the appearance of diagnostic
 #' normalization box-plots.
+#'
+#' @keywords microarray_processing_functions
 #'
 #' @param txt_dir String where raw agilent txt files are located
 #' @param p_array_threshold Dbl between 0-1. Represents the proportion of

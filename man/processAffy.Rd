@@ -39,3 +39,4 @@ dim(affy_output_list$raw_expression) # c(1354896, 2)
 dim(affy_output_list$normalized_expression) # c(54675, 2)
 }
 }
+\keyword{microarray_processing_functions}

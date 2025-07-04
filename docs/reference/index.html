@@ -23,6 +23,7 @@
   </ul></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json"></form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/BenSolomon/simpleExpressionProcessing" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul></div>
 
 
@@ -35,9 +36,9 @@
     </div>
 
     <div class="section level2">
-      <h2 id="all-functions">All functions<a class="anchor" aria-label="anchor" href="#all-functions"></a></h2>
+      <h2 id="data">Data<a class="anchor" aria-label="anchor" href="#data"></a></h2>
 
-
+      <div class="section-desc"><p>Various small datasets used by function examples</p></div>
 
 
     </div><div class="section level2">
@@ -69,48 +70,23 @@
 
         </dt>
         <dd>GSE6629 Raw expression data</dd>
-      </dl><dl><dt>
+      </dl></div><div class="section level2">
+      <h2 id="geo-interacting-functions">GEO interacting functions<a class="anchor" aria-label="anchor" href="#geo-interacting-functions"></a></h2>
 
-          <code><a href="NCBIcountToMatrix.html">NCBIcountToMatrix()</a></code>
+      <div class="section-desc"><p>Collection of functions that interact with NCBI GEO to download or parse data or metadata</p></div>
 
-        </dt>
-        <dd>NCBIcountToMatrix</dd>
-      </dl><dl><dt>
 
-          <code><a href="addRawExprMatrix.html">addRawExprMatrix()</a></code>
+    </div><div class="section level2">
 
-        </dt>
-        <dd>addRawExprMatrix</dd>
-      </dl><dl><dt>
 
-          <code><a href="addReprocessedExprMatrix.html">addReprocessedExprMatrix()</a></code>
 
-        </dt>
-        <dd>addReprocessedExprMatrix</dd>
-      </dl><dl><dt>
 
-          <code><a href="dot-checkmateSingleMetaIntegratorObject.html">.checkmateSingleMetaIntegratorObject()</a></code>
-
-        </dt>
-        <dd>.checkmateSingleMetaIntegratorObject</dd>
-      </dl><dl><dt>
+      <dl><dt>
 
           <code><a href="dot-getNCBIdataURLs.html">.getNCBIdataURLs()</a></code>
 
         </dt>
         <dd>.getNCBIdataURLs</dd>
-      </dl><dl><dt>
-
-          <code><a href="fixMetaIntegratorForRNAseq.html">fixMetaIntegratorForRNAseq()</a></code>
-
-        </dt>
-        <dd>fixMetaIntegratorForRNAseq</dd>
-      </dl><dl><dt>
-
-          <code><a href="geoAllBoxplots.html">geoAllBoxplots()</a></code>
-
-        </dt>
-        <dd>geoAllBoxplots</dd>
       </dl><dl><dt>
 
           <code><a href="getGEOData_retryWrapper.html">getGEOData_retryWrapper()</a></code>
@@ -128,7 +104,7 @@
           <code><a href="getRNAcountMatrixNCBI.html">getRNAcountMatrixNCBI()</a></code>
 
         </dt>
-        <dd>Title</dd>
+        <dd>getRNAcountMatrixNCBI</dd>
       </dl><dl><dt>
 
           <code><a href="getSuppFiles.html">getSuppFiles()</a></code>
@@ -165,7 +141,76 @@
 
         </dt>
         <dd>platformGuess</dd>
+      </dl></div><div class="section level2">
+      <h2 id="geo-object-helpers">GEO object helpers<a class="anchor" aria-label="anchor" href="#geo-object-helpers"></a></h2>
+
+      <div class="section-desc"><p>Functions related to working with MetaIntegrator GEO objects</p></div>
+
+
+    </div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
+          <code><a href="addRawExprMatrix.html">addRawExprMatrix()</a></code>
+
+        </dt>
+        <dd>addRawExprMatrix</dd>
       </dl><dl><dt>
+
+          <code><a href="addReprocessedExprMatrix.html">addReprocessedExprMatrix()</a></code>
+
+        </dt>
+        <dd>addReprocessedExprMatrix</dd>
+      </dl><dl><dt>
+
+          <code><a href="dot-checkmateSingleMetaIntegratorObject.html">.checkmateSingleMetaIntegratorObject()</a></code>
+
+        </dt>
+        <dd>.checkmateSingleMetaIntegratorObject</dd>
+      </dl><dl><dt>
+
+          <code><a href="fixMetaIntegratorForRNAseq.html">fixMetaIntegratorForRNAseq()</a></code>
+
+        </dt>
+        <dd>fixMetaIntegratorForRNAseq</dd>
+      </dl></div><div class="section level2">
+      <h2 id="rnaseq-processing-functions">RNAseq processing functions<a class="anchor" aria-label="anchor" href="#rnaseq-processing-functions"></a></h2>
+
+      <div class="section-desc"><p>Functions related to normalizing raw RNAseq data</p></div>
+
+
+    </div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
+          <code><a href="NCBIcountToMatrix.html">NCBIcountToMatrix()</a></code>
+
+        </dt>
+        <dd>NCBIcountToMatrix</dd>
+      </dl><dl><dt>
+
+          <code><a href="processRNA.html">processRNA()</a></code>
+
+        </dt>
+        <dd>processRNA</dd>
+      </dl></div><div class="section level2">
+      <h2 id="microarray-processing-functions">Microarray processing functions<a class="anchor" aria-label="anchor" href="#microarray-processing-functions"></a></h2>
+
+      <div class="section-desc"><p>Functions related to normalizing raw microarray data</p></div>
+
+
+    </div><div class="section level2">
+
+
+
+
+      <dl><dt>
 
           <code><a href="processAffy.html">processAffy()</a></code>
 
@@ -177,14 +222,26 @@
 
         </dt>
         <dd>processAgilent</dd>
-      </dl><dl><dt>
+      </dl></div><div class="section level2">
+      <h2 id="plotting-functions">Plotting functions<a class="anchor" aria-label="anchor" href="#plotting-functions"></a></h2>
 
-          <code><a href="processRNA.html">processRNA()</a></code>
+
+
+
+    </div><div class="section level2">
+
+
+
+
+      <dl><dt>
+
+          <code><a href="geoAllBoxplots.html">geoAllBoxplots()</a></code>
 
         </dt>
-        <dd>processRNA</dd>
+        <dd>geoAllBoxplots</dd>
       </dl></div>
-  </main></div>
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside></div>
 
 
     <footer><div class="pkgdown-footer-left">

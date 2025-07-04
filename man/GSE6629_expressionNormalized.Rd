@@ -17,4 +17,4 @@ GSE6629_expressionNormalized
 \description{
 Data from the supplemental files in the GSE6629 GEO series after normalization
 }
-\keyword{datasets}
+\keyword{data}
