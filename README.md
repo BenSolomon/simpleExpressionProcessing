@@ -8,8 +8,8 @@
 
 The goal of simpleExpressionProcessing is to provide simple tools for
 downloading and normalizing raw RNA expression data from GEO, including
-microarray and bulk RNA sequencing experiments, within the `GEOquery`
-class format.
+microarray and bulk RNA sequencing experiments, using the
+`MetaIntegrator` class
 
 ## IMPORTANT NOTE
 

@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of simpleExpressionProcessing is to provide simple tools for downloading and normalizing raw RNA expression data from GEO, including microarray and bulk RNA sequencing experiments, within the `GEOquery` class format. 
+The goal of simpleExpressionProcessing is to provide simple tools for downloading and normalizing raw RNA expression data from GEO, including microarray and bulk RNA sequencing experiments, using the `MetaIntegrator` class
 
 ## IMPORTANT NOTE
 
