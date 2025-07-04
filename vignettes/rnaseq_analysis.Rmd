@@ -1,5 +1,5 @@
 ---
-title: "rnaseq_analysis"
+title: "RNAseq Analysis"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{rnaseq_analysis}

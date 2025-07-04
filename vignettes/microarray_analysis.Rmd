@@ -1,5 +1,5 @@
 ---
-title: "microarray_analysis"
+title: "Microarray Analysis"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{microarray_analysis}
